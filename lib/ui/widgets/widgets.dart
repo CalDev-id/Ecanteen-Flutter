@@ -12,3 +12,4 @@ part 'food_card.dart';
 part 'rating.dart';
 part 'custom_tabbar.dart';
 part 'food_list_item.dart';
+part 'order_list_item.dart';

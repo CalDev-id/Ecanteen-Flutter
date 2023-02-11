@@ -135,9 +135,20 @@ class _FoodPageState extends State<FoodPage> {
                 children: mockFoods
                     .map((e) => Padding(
                           padding: const EdgeInsets.only(left: defaultMargin),
-                          child: FoodCard(
-                            e,
-                            food: e,
+                          child: GestureDetector(
+                            onTap: () {
+                              Get.to(() => FoodDetailsPage(
+                                    transaction:
+                                        Transaction(food: e, user: mockUser),
+                                    onBackButtonPressed: () {
+                                      Get.back();
+                                    },
+                                  ));
+                            },
+                            child: FoodCard(
+                              e,
+                              food: e,
+                            ),
                           ),
                         ))
                     .toList(),
@@ -173,8 +184,19 @@ class _FoodPageState extends State<FoodPage> {
                         .map((e) => Padding(
                               padding: const EdgeInsets.fromLTRB(
                                   defaultMargin, 0, defaultMargin, 16),
-                              child: FoodListItem(
-                                  food: e, itemWidth: ListItemWidth),
+                              child: GestureDetector(
+                                onTap: () {
+                                  Get.to(() => FoodDetailsPage(
+                                        transaction: Transaction(
+                                            food: e, user: mockUser),
+                                        onBackButtonPressed: () {
+                                          Get.back();
+                                        },
+                                      ));
+                                },
+                                child: FoodListItem(
+                                    food: e, itemWidth: ListItemWidth),
+                              ),
                             ))
                         .toList());
               }),

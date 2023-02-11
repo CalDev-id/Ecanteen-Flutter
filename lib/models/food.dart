@@ -27,7 +27,7 @@ class Food extends Equatable {
 List<Food> mockFoods = [
   const Food(
     id: 1,
-    picturePath: 'assets/pizza.png',
+    picturePath: 'assets/pizza2.jpg',
     name: 'Pizza Bandung',
     description:
         'Makanan khas Bandung yang cukup sering dipesan oleh anak muda dengan pola makan yang cukup tinggi dengan mengutamakan diet yang sehat dan teratur',
@@ -37,18 +37,18 @@ List<Food> mockFoods = [
   ),
   const Food(
     id: 2,
-    picturePath: 'assets/pizza.png',
-    name: 'Pizza Bandung',
+    picturePath: 'assets/mixuemerah.jpeg',
+    name: 'Mixue Merah',
     description:
         'Makanan khas Bandung yang cukup sering dipesan oleh anak muda dengan pola makan yang cukup tinggi dengan mengutamakan diet yang sehat dan teratur',
     ingredients: "Seledri, Telur, Tepung, Blueberry, Keju",
-    price: 30000,
+    price: 15000,
     rate: 4.8,
   ),
   const Food(
     id: 3,
-    picturePath: 'assets/pizza.png',
-    name: 'Pizza Bandung',
+    picturePath: 'assets/coffee.jpg',
+    name: 'Nigeria Coffee',
     description:
         'Makanan khas Bandung yang cukup sering dipesan oleh anak muda dengan pola makan yang cukup tinggi dengan mengutamakan diet yang sehat dan teratur',
     ingredients: "Seledri, Telur, Tepung, Blueberry, Keju",

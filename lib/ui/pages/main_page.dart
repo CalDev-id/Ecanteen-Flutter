@@ -34,9 +34,9 @@ class _MainPageState extends State<MainPage> {
           // ignore: prefer_const_literals_to_create_immutables
           children: [
             const Center(child: FoodPage()),
-            const Center(child: Text('Orders')),
+            const Center(child: OrderHistory()),
             const Center(child: Text('Wallet')),
-            const Center(child: Text('Account')),
+            const Center(child: AccountPage()),
           ],
         )),
         Align(

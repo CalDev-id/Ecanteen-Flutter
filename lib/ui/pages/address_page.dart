@@ -67,7 +67,7 @@ class _AddressPageState extends State<AddressPage> {
                   border: Border.all(color: Colors.grey)),
               child: DropdownButton(
                 isExpanded: true,
-                underline: SizedBox(),
+                underline: const SizedBox(),
                 // ignore: prefer_const_literals_to_create_immutables
                 items: [
                   const DropdownMenuItem(
@@ -102,7 +102,7 @@ class _AddressPageState extends State<AddressPage> {
               child: FloatingActionButton(
                   backgroundColor: mainColor,
                   onPressed: () {
-                    Get.to(() => const AddressPage());
+                    Get.to(() => const SuccessSignUpPage());
                   },
                   child: const Icon(Icons.arrow_forward)),
             )

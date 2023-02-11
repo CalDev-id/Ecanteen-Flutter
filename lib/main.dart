@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: SignInPage(),
       // home: FoodDetailsPage(
-      //   transaction: Transaction(food: mockFoods[0]),
+      //   transaction: Transaction(food: mockFoods[0], user: mockUser),
       // ),
     );
   }
