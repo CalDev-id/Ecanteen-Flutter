@@ -35,7 +35,7 @@ class _MainPageState extends State<MainPage> {
           children: [
             const Center(child: FoodPage()),
             const Center(child: OrderHistory()),
-            const Center(child: Text('Wallet')),
+            const Center(child: WalletPage()),
             const Center(child: AccountPage()),
           ],
         )),
