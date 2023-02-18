@@ -16,7 +16,7 @@ class WalletPage extends StatelessWidget {
       title: "Top Up",
       subtitle: "You deserve better meal",
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: defaultMargin),
+        margin: EdgeInsets.symmetric(horizontal: defaultMargin, vertical: 10),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -69,7 +69,13 @@ class WalletPage extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 30,
+              height: 20,
+            ),
+            Text("Select Bank",
+                style: GoogleFonts.poppins(
+                    fontSize: 18, fontWeight: FontWeight.w600)),
+            SizedBox(
+              height: 20,
             ),
             BankListItem(
               bankName: myBank[0][0],

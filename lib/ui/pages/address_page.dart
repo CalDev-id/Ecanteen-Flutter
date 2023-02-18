@@ -68,6 +68,7 @@ class _AddressPageState extends State<AddressPage> {
               child: DropdownButton(
                 isExpanded: true,
                 underline: const SizedBox(),
+                value: cityController.text,
                 // ignore: prefer_const_literals_to_create_immutables
                 items: [
                   const DropdownMenuItem(

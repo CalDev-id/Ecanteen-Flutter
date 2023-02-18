@@ -12,16 +12,23 @@ class BankListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(bottom: 10),
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
       decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: Colors.grey[300])),
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 15,
+              spreadRadius: 1,
+              color: Colors.black12,
+            ),
+          ]),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
-            width: 60,
-            height: 60,
+            width: 100,
+            height: 80,
             margin: EdgeInsets.only(right: 16),
             decoration: BoxDecoration(
                 image: DecorationImage(
@@ -32,7 +39,9 @@ class BankListItem extends StatelessWidget {
             children: [
               Text(bankName,
                   style: GoogleFonts.poppins(
-                      fontSize: 16, fontWeight: FontWeight.w600)),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                      color: '#14193F'.toColor())),
               Text(bankMin,
                   style: GoogleFonts.poppins(
                       fontSize: 14,
@@ -40,13 +49,13 @@ class BankListItem extends StatelessWidget {
                       color: Colors.black87)),
             ],
           ),
-          Spacer(),
-          Container(
-            width: 24,
-            height: 24,
-            margin: EdgeInsets.only(right: 6),
-            child: Icon(Icons.chevron_right, color: Colors.grey),
-          ),
+          // Spacer(),
+          // Container(
+          //   width: 24,
+          //   height: 24,
+          //   margin: EdgeInsets.only(right: 6),
+          //   child: Icon(Icons.chevron_right, color: Colors.grey),
+          // ),
         ],
       ),
     );
