@@ -55,4 +55,14 @@ List<Food> mockFoods = [
     price: 30000,
     rate: 4.8,
   ),
+  const Food(
+    id: 3,
+    picturePath: 'assets/coffee.jpg',
+    name: 'Nigeria Coffee',
+    description:
+        'Makanan khas Bandung yang cukup sering dipesan oleh anak muda dengan pola makan yang cukup tinggi dengan mengutamakan diet yang sehat dan teratur',
+    ingredients: "Seledri, Telur, Tepung, Blueberry, Keju",
+    price: 30000,
+    rate: 4.8,
+  ),
 ];
