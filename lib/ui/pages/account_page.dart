@@ -22,6 +22,17 @@ class _AccountPageState extends State<AccountPage> {
     "Terms & Conditions"
   ];
 
+  File imageFile;
+
+  Future getImage() async {
+    final ImagePicker _picker = ImagePicker();
+
+    final XFile imagePicked =
+        await _picker.pickImage(source: ImageSource.gallery);
+    imageFile = File(imagePicked.path);
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -33,22 +44,38 @@ class _AccountPageState extends State<AccountPage> {
               const EdgeInsets.only(top: 50, left: 20, right: 20, bottom: 20),
           child: Column(
             children: [
-              Container(
-                  width: 110,
-                  height: 110,
-                  margin: const EdgeInsets.only(bottom: 20),
-                  padding: const EdgeInsets.all(10),
-                  decoration: const BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage("assets/border.png"))),
-                  child: Container(
+              GestureDetector(
+                onTap: () async {
+                  await getImage();
+                },
+                child: Container(
+                    width: 110,
+                    height: 110,
+                    margin: const EdgeInsets.only(bottom: 20),
+                    padding: const EdgeInsets.all(10),
                     decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      image: DecorationImage(
-                          image: AssetImage("assets/ical.jpg"),
-                          fit: BoxFit.cover),
-                    ),
-                  )),
+                        image: DecorationImage(
+                            image: AssetImage("assets/border.png"))),
+                    child: imageFile != null
+                        ? Container(
+                            // margin: const EdgeInsets.only(top: 30),
+                            width: double.infinity,
+                            height: 200,
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                    image: FileImage(imageFile),
+                                    fit: BoxFit.cover)),
+                          )
+                        : Container(
+                            decoration: const BoxDecoration(
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                  image: AssetImage("assets/photodummy.png"),
+                                  fit: BoxFit.cover),
+                            ),
+                          )),
+              ),
               Text(mockUser.name, style: GoogleFonts.poppins(fontSize: 18)),
               Text(mockUser.email,
                   style: GoogleFonts.poppins(fontSize: 14, color: Colors.grey)),

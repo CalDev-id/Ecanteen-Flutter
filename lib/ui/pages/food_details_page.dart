@@ -173,12 +173,18 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                                 fontSize: 16,
                                 fontWeight: FontWeight.w400)),
                         Container(
-                          margin: const EdgeInsets.fromLTRB(0, 4, 0, 41),
+                          margin: const EdgeInsets.fromLTRB(0, 4, 0, 20),
                           child: Text(
                             widget.transaction.food.ingredients,
                             style: GoogleFonts.poppins(
                                 color: greyColor, fontSize: 14),
                           ),
+                        ),
+                        Container(
+                          height: 200,
+                          width: double.infinity,
+                          margin: const EdgeInsets.only(bottom: 20),
+                          child: Tracking(),
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -204,10 +210,15 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                                         fontWeight: FontWeight.w500))
                               ],
                             ),
-                            SizedBox(
+                            Container(
                               width: 163,
                               height: 45,
-                              child: RaisedButton(
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    primary: mainColor,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(8),
+                                    )),
                                 onPressed: () {
                                   Get.to(() => PaymentPage(
                                       transaction: widget.transaction.copyWith(
@@ -218,16 +229,16 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                                                   1.1)
                                               .toInt())));
                                 },
-                                color: mainColor,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(8)),
+                                // color: mainColor,
+                                // shape: RoundedRectangleBorder(
+                                //     borderRadius: BorderRadius.circular(8)),
                                 child: Text('order now',
                                     style: GoogleFonts.poppins(
                                         color: Colors.white,
                                         fontSize: 18,
                                         fontWeight: FontWeight.w500)),
                               ),
-                            )
+                            ),
                           ],
                         ),
                       ],

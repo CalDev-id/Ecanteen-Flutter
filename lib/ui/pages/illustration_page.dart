@@ -52,11 +52,16 @@ class IllustrationPage extends StatelessWidget {
         Container(
           width: 200,
           height: 45,
-          child: RaisedButton(
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                primary: mainColor,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                )),
             onPressed: onButtonPressed1,
-            color: mainColor,
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+            // color: mainColor,
+            // shape:
+            //     RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
             child: Text(
               buttonTitle1,
               style: GoogleFonts.poppins(
@@ -74,12 +79,17 @@ class IllustrationPage extends StatelessWidget {
           child: Container(
             width: 200,
             height: 45,
-            child: RaisedButton(
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  primary: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  )),
               onPressed: onButtonPressed2,
-              color: Colors.white,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                  side: BorderSide(color: mainColor)),
+              // color: Colors.white,
+              // shape: RoundedRectangleBorder(
+              //     borderRadius: BorderRadius.circular(8),
+              //     side: BorderSide(color: mainColor)),
               child: Text(
                 buttonTitle2 ?? "title",
                 style: GoogleFonts.poppins(

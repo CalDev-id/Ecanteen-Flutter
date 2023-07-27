@@ -8,6 +8,8 @@ class Food extends Equatable {
   final String ingredients;
   final int price;
   final double rate;
+  final double location;
+  final double location2;
 
   const Food({
     this.id,
@@ -17,11 +19,22 @@ class Food extends Equatable {
     this.ingredients,
     this.price,
     this.rate,
+    this.location,
+    this.location2,
   });
 
   @override
-  List<Object> get props =>
-      [id, picturePath, name, description, ingredients, price, rate];
+  List<Object> get props => [
+        id,
+        picturePath,
+        name,
+        description,
+        ingredients,
+        price,
+        rate,
+        location,
+        location2
+      ];
 }
 
 List<Food> mockFoods = [
@@ -34,6 +47,8 @@ List<Food> mockFoods = [
     ingredients: "Seledri, Telur, Tepung, Blueberry, Keju",
     price: 30000,
     rate: 4.8,
+    location: -6.117664,
+    location2: 106.906349,
   ),
   const Food(
     id: 2,
@@ -44,25 +59,31 @@ List<Food> mockFoods = [
     ingredients: "Seledri, Telur, Tepung, Blueberry, Keju",
     price: 15000,
     rate: 4.8,
+    location: -6.117664,
+    location2: 106.906349,
   ),
   const Food(
     id: 3,
     picturePath: 'assets/coffee.jpg',
-    name: 'Nigeria Coffee',
+    name: 'Americano Coffee',
     description:
         'Makanan khas Bandung yang cukup sering dipesan oleh anak muda dengan pola makan yang cukup tinggi dengan mengutamakan diet yang sehat dan teratur',
     ingredients: "Seledri, Telur, Tepung, Blueberry, Keju",
     price: 30000,
     rate: 4.8,
+    location: -6.117664,
+    location2: 106.906349,
   ),
   const Food(
     id: 3,
     picturePath: 'assets/coffee.jpg',
-    name: 'Nigeria Coffee',
+    name: 'Indonesia Coffee',
     description:
         'Makanan khas Bandung yang cukup sering dipesan oleh anak muda dengan pola makan yang cukup tinggi dengan mengutamakan diet yang sehat dan teratur',
     ingredients: "Seledri, Telur, Tepung, Blueberry, Keju",
     price: 30000,
     rate: 4.8,
+    location: -6.117664,
+    location2: 106.906349,
   ),
 ];

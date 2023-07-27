@@ -181,19 +181,19 @@ class _FoodPageState extends State<FoodPage> {
                         : [];
                 return Column(
                     children: foods
-                        .map((e) => Padding(
-                              padding: const EdgeInsets.fromLTRB(
-                                  defaultMargin, 0, defaultMargin, 16),
-                              child: GestureDetector(
-                                onTap: () {
-                                  Get.to(() => FoodDetailsPage(
-                                        transaction: Transaction(
-                                            food: e, user: mockUser),
-                                        onBackButtonPressed: () {
-                                          Get.back();
-                                        },
-                                      ));
-                                },
+                        .map((e) => GestureDetector(
+                              onTap: () {
+                                Get.to(() => FoodDetailsPage(
+                                      transaction:
+                                          Transaction(food: e, user: mockUser),
+                                      onBackButtonPressed: () {
+                                        Get.back();
+                                      },
+                                    ));
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.fromLTRB(
+                                    defaultMargin, 0, defaultMargin, 16),
                                 child: FoodListItem(
                                     food: e, itemWidth: ListItemWidth),
                               ),

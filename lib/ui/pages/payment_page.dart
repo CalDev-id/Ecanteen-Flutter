@@ -374,13 +374,19 @@ class PaymentPage extends StatelessWidget {
                       width: MediaQuery.of(context).size.width / 1.3 -
                           defaultMargin -
                           5,
-                      child: RaisedButton(
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            primary: mainColor,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            )),
                         onPressed: () {
-                          Get.to(SuccessOrderPage());
+                          tambahCatatan();
+                          Get.to(() => const SuccessOrderPage());
                         },
-                        color: mainColor,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8)),
+                        // color: mainColor,
+                        // shape: RoundedRectangleBorder(
+                        //     borderRadius: BorderRadius.circular(8)),
                         child: Text('Checkout',
                             style: GoogleFonts.poppins(
                                 color: Colors.white,
@@ -401,5 +407,15 @@ class PaymentPage extends StatelessWidget {
         ]),
       ]),
     );
+  }
+
+  //fungsi tambah
+  Future<void> tambahCatatan() async {
+    await SQLHelper.tambahHistori(
+        transaction.food.name.toString(),
+        (transaction.quantity * transaction.food.price * 1.1).toInt(),
+        transaction.quantity,
+        DateTime.now().toString(),
+        transaction.food.picturePath.toString());
   }
 }
